@@ -1,13 +1,16 @@
 ﻿using System;
 
-namespace Palgakalkulaator
+namespace SalaryCalculator
 {
     class Program
     {
         static void Main(string[] args)
         {
             // kood 
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Sisesta palk!");
+            float brutoSalary = float.Parse(Console.ReadLine());
+
+
         }
     }
 }
