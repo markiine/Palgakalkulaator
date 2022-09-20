@@ -7,12 +7,74 @@ namespace SalaryCalculator
         static void Main(string[] args)
         {
             // kood 
-            Console.WriteLine("Sisesta palk!");
-            float brutoSalary = float.Parse(Console.ReadLine());
+            int brutoSalary = 0;
+
+            Console.WriteLine("Please enter your bruto salary: ");
+            brutoSalary = Convert.ToInt32(Console.ReadLine());
+
+            if (brutoSalary <= 1200 && brutoSalary >= 500)
+            {
+                Calc1(brutoSalary);
+            }
+
+            if (brutoSalary <= 2099 && brutoSalary >= 1201)
+            {
+                Calc2(brutoSalary);
+            }
+
+            if (brutoSalary >= 2100)
+            {
+                Calc3(brutoSalary);
+            }
 
 
         }
+
+
+        static void Calc1(double brutoSalary)
+        {
+            double pensionFond = brutoSalary * 0.02;
+
+            double Insurance = brutoSalary * 0.016;
+
+            double Tax = (brutoSalary - 500 - pensionFond - Insurance) * 0.2;
+
+            double Calc1 = brutoSalary - pensionFond - Insurance - Tax;
+
+            Console.WriteLine("Your neto salary is = " + Calc1);
+        }
+
+        static void Calc2(double brutoSalary)
+        {
+            double pensionFond = brutoSalary * 0.02;
+
+            double Insurance = brutoSalary * 0.016;
+
+            double TaxFreeInCome = 500 - 0.55556 * (brutoSalary - 1200);
+
+            double Tax = (brutoSalary - pensionFond - Insurance - TaxFreeInCome) * 0.2;
+
+            double Calc2 = brutoSalary - pensionFond - Insurance - Tax;
+
+            Console.WriteLine("Your neto salary is = " + Calc2);
+        }
+
+        static void Calc3(double brutoSalary)
+        {
+            double pensionFond = brutoSalary * 0.02;
+
+            double Insurance = brutoSalary * 0.016;
+
+            double Tax = brutoSalary * 0.2;
+
+            double Calc3 = brutoSalary - pensionFond - Insurance - Tax;
+
+            Console.WriteLine("Your neto salary is = " + Calc3);
+        }
+
+
     }
+
 }
 
 
