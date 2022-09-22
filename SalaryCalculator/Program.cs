@@ -6,6 +6,23 @@ namespace SalaryCalculator
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Please enter your bruto salary: ");
+            double brutoSalary = Convert.ToDouble(Console.ReadLine());  //variant ka Double.Parse(Console.ReadLine()
+        }
+
+
+        public static void SalaryIsLessThan1200(double brutoSalary)
+        {
+            double unemploymentTax = brutoSalary * 0.016;
+            double pensionFond = brutoSalary * 0.02;
+            double incomeTax;
+        }
+
+
+
+        /* MUU VARIANT
+        static void Main(string[] args)
+        {
             // kood 
             int brutoSalary = 0;
 
@@ -71,6 +88,7 @@ namespace SalaryCalculator
 
             Console.WriteLine("Your neto salary is = " + Calc3);
         }
+        */
 
 
     }
