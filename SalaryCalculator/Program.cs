@@ -66,6 +66,8 @@ namespace SalaryCalculator
 
 
 
+
+
         /* MUU VARIANT
         static void Main(string[] args)
         {
