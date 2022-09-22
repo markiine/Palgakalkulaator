@@ -12,7 +12,15 @@ namespace SalaryCalculator
 
             if (brutoSalary <= 1200 ) //&& brutoSalary >= 500)
             {
-                SalaryIsLessThan1200(brutoSalary);
+                if (brutoSalary <= 500)
+                {
+                    SalaryIsLessThan500(brutoSalary);
+                }
+                else
+                {
+                    SalaryIsLessThan1200(brutoSalary);
+                }
+                
             }
 
             if (brutoSalary <= 2099 && brutoSalary >= 1201)
@@ -26,6 +34,19 @@ namespace SalaryCalculator
             }
 
         }
+
+
+        // ERAND
+        public static void SalaryIsLessThan500(double brutoSalary)
+        {
+            double unemploymentTax = brutoSalary * 0.016;
+            double pensionFond = brutoSalary * 0.02;
+
+            double netIncome = brutoSalary - unemploymentTax - pensionFond;
+
+            Console.WriteLine($"Your neto salary is: {netIncome}");
+        }
+
 
 
         public static void SalaryIsLessThan1200(double brutoSalary)
@@ -58,7 +79,7 @@ namespace SalaryCalculator
         {
             double unemploymentTax = brutoSalary * 0.016;
             double pensionFond = brutoSalary * 0.02;
-            double incomeTax = brutoSalary * 0.2;
+            double incomeTax = (brutoSalary - unemploymentTax - pensionFond) * 0.2;
             double netIncome = brutoSalary - unemploymentTax - pensionFond - incomeTax;
 
             Console.WriteLine($"Your neto salary is: {netIncome}");
@@ -130,7 +151,7 @@ namespace SalaryCalculator
 
             double Insurance = brutoSalary * 0.016;
 
-            double Tax = brutoSalary * 0.2;
+            double Tax = (brutoSalary - pensionFond - Insurance) * 0.2;
 
             double Calc3 = brutoSalary - pensionFond - Insurance - Tax;
 
